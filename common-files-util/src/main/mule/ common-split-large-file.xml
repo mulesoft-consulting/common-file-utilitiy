@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:java="http://www.mulesoft.org/schema/mule/java" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/java http://www.mulesoft.org/schema/mule/java/current/mule-java.xsd">
+	<sub-flow name="common-split-large-file-main-flow" doc:id="0d914ed9-5ccc-4a61-8184-918f4e2d9c51" >
+<java:invoke-static doc:id="5749eb68-929a-4b15-a10d-346646aee3db" class="com.mulesoft.files.util.SplitLargeFile" doc:name="Invoke static" method="splitFile(java.lang.String,int)">
+			<java:args><![CDATA[#[{ arg0: vars.filePath, arg1: vars.splitSizeinMb}]]]></java:args>
+		</java:invoke-static>
+	</sub-flow>
+</mule>
