@@ -10,19 +10,23 @@ When uploading large files (50MB or  more) to Amazon S3. It is recommended to us
 2. Refer to the common-split-large-file-main-flow to see how one can call the splitFile method in the SplitLargeFile class
 
     # Input to the splitFile method:
-    String filePath  <-- the absolute path to the 'large' file to be splitted
-    int fileSplitSize <-- the size of individual smaller files in MB
+    	String filePath  <-- the absolute path to the 'large' file to be splitted
+    
+    	int fileSplitSize <-- the size of individual smaller files in MB
 
     # Output of the splitFile method:
-    If no file is found, return  -1
+    	If no file is found, return  -1
+	
 	If file size is less than the fileSplitSize, return 0
+	
 	If the file is successfully splitted, return number of smaller files it produced 
 
 # To test the code:
 Create some test files and change the below line in the main method accordingly.
 
-		String FilePath = "/Users/chiew.lee/test-files/large-test-file-923MB.json";
+	String FilePath = "/Users/chiew.lee/test-files/large-test-file-923MB.json";
 
 # Note
 When running on CloudHub, leverage the /tmp folder. 
+
 In all cases, remember to delete the files accordingly to preserve disk space.
